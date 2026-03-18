@@ -38,4 +38,4 @@ O objetivo central da página de entrada do projeto é **Apresentar Soluções e
 * **Proposta:** Feito por Carlos Gustavo Guerra Carvalho
 
 ## Estrutura prevista da landing page
-@todo
+@todo 
