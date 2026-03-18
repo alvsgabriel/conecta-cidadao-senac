@@ -1,6 +1,6 @@
 ## projeto-integrador-grupo01
 
-### Conecta Cidadão
+# Conecta Cidadão
 
 ## Integrantes:
 - Carlos Gustavo Guerra Carvalho
