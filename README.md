@@ -15,7 +15,7 @@ O Conecta Cidadão é uma solução tecnológica criada para melhorar a comunica
 Nossa proposta é centralizar alertas e pedidos de ajuda em uma plataforma integrada, garantindo que informações críticas (como enchentes ou interdições) cheguem instantaneamente e de forma clara aos cidadãos e gestores. A missão é transformar a tecnologia em uma ferramenta de empoderamento cívico.
 
 ### Necessidade
-Atualmente, a comunicação entre o cidadão e os serviços públicos é caracterizada por ser ineficiente, fragmentada e reativa[cite: 10]. Os principais problemas identificados são:
+Atualmente, a comunicação entre o cidadão e os serviços públicos é caracterizada por ser ineficiente, fragmentada e reativa. Os principais problemas identificados são:
 * **Resposta ineficiente a emergências:** Falta de clareza sobre localização, situação real e prioridade das demandas.
 * **Escassez de dados em tempo real:** Tanto a população quanto os serviços carecem de informações atualizadas sobre ocorrências em andamento.
 * **Canais complicados:** Existe uma falta de agilidade na comunicação ou clareza sobre qual serviço específico deve ser acionado.
