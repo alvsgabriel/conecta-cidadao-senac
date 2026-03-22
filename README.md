@@ -100,13 +100,46 @@ Integrações e Serviços Externos:
 
 ## Planejamento Técnico da Página 
 
-- O projeto Conecta Cidadão utilizará HTML para estruturar toda a página, organizando as seções como cabeçalho, chamada inicial, área de problema, funcionalidades e demais conteúdos.
-- O CSS será responsável pela estilização da interface, definindo cores, layout, tipografia e garantindo uma navegação clara, responsiva e agradável para o usuário.
-- O JavaScript será utilizado para implementar funcionalidades interativas, como menus dinâmicos, possíveis animações na navegação, além da integração com a API pública, permitindo a exibição de dados atualizados em tempo real para o usuário.
+- A landing será desenvolvida como página responsiva, com foco em clareza de informação, apresentação da proposta da solução e captação de interesse de cidadãos e gestores públicos. 
 
+- **Cabeçalho (header):** Apresentará o nome do projeto, menu de navegação e botão de chamada para ação. Essa seção terá como objetivo facilitar o acesso rápido às áreas principais da página.
 
+- **Seção principal (Hero Section):** Será a área de destaque inicial da landing page, contendo o slogan do projeto, uma breve apresentação da proposta de valor e botões de ação, como “Saiba mais” e “Solicitar demonstração”. Também poderá conter uma imagem ilustrativa ou mockup da plataforma.
 
+- **Seção do Problema:** Explicará as dificuldades atuais na comunicação entre cidadãos e serviços públicos, destacando pontos como demora no atendimento, falta de integração e ausência de dados em tempo real. O objetivo será contextualizar a necessidade da solução.
 
+- **Seção da Solução:** Apresentará o Conecta Cidadão como resposta para esses problemas, explicando como a plataforma centraliza alertas, pedidos de ajuda e informações em tempo real.
 
-Infraestrutura e BackEnd:
+- **Seção de Funcionalidades:** Será dividida em dois blocos:
+  - **Funcionalidades para o cidadão:** envio de solicitações, recebimento de alertas, acompanhamento de ocorrências.
+  - **Funcionalidades para gestores públicos:** painel administrativo, mapa de ocorrências, correlação entre clima e demandas.
+
+- **Seção de Dados Climáticos / Integração com API:** Mostrará como os dados da OpenWeatherMap API serão integrados à aplicação. Nessa área, será possível exibir informações como temperatura, umidade, vento e condição climática atual. Essa seção servirá tanto para demonstrar tecnicamente o uso da API quanto para reforçar o valor da solução no monitoramento de situações de risco.
+
+- **Seção de Benefícios e Impacto:** Apresentará os principais ganhos da plataforma, como agilidade no atendimento, prevenção de riscos, melhor comunicação institucional e fortalecimento da cidadania.
+
+- **Seção de Chamada para Ação (CTA):** Trará um formulário simples ou botões para contato, demonstração e interesse em parceria, com foco em conversão de leads e divulgação do projeto.
+
+- **Rodapé (Footer):** Conterá informações complementares, nomes da equipe, links institucionais e créditos do projeto.
+
+- **Resumo das linguagens**
+  - O projeto Conecta Cidadão utilizará HTML para estruturar toda a página, organizando as seções como cabeçalho, chamada inicial, área de problema, funcionalidades e demais conteúdos.
+  <header> para o topo da página
+  <section> para dividir os blocos de conteúdo
+  <nav> para o menu de navegação
+  <form> para captação de contatos
+  <footer> para o rodapé
+  Além disso, o HTML será responsável por organizar textos, títulos, botões, imagens, cards informativos e áreas reservadas para exibição dinâmica dos dados climáticos trazidos pela API.
+
+  - O CSS será responsável pela estilização da interface, definindo cores, layout, tipografia e garantindo uma navegação clara, responsiva e agradável para o usuário.
+
+  - O JavaScript será utilizado para implementar a interatividade da página e realizar a integração com a OpenWeatherMap API. Entre suas funções principais estão:
+    - Realizar requisições à API para obter dados climáticos em tempo real
+    - Processar e exibir essas informações dinamicamente na seção de clima
+    - Permitir interações com botões e elementos da página
+    - Validar campos do formulário de contato antes do envio
+    - Atualizar partes do conteúdo sem necessidade de recarregar a página
+    - Dessa forma, o JavaScript será o responsável por conectar a parte visual da landing page com dados externos e comportamentos dinâmicos da interface.
+
+## Infraestrutura e BackEnd:
  - A ver
