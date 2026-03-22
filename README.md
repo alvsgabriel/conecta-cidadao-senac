@@ -124,12 +124,12 @@ Integrações e Serviços Externos:
 
 - **Resumo das linguagens**
   - O projeto Conecta Cidadão utilizará HTML para estruturar toda a página, organizando as seções como cabeçalho, chamada inicial, área de problema, funcionalidades e demais conteúdos.
-  <header> para o topo da página
-  <section> para dividir os blocos de conteúdo
-  <nav> para o menu de navegação
-  <form> para captação de contatos
-  <footer> para o rodapé
-  Além disso, o HTML será responsável por organizar textos, títulos, botões, imagens, cards informativos e áreas reservadas para exibição dinâmica dos dados climáticos trazidos pela API.
+   - `<header>` para o topo da página
+   - `<section>` para dividir os blocos de conteúdo
+   - `<nav>` para o menu de navegação
+   - `<form>` para captação de contatos
+   - `<footer>` para o rodapé
+  - Além disso, o HTML será responsável por organizar textos, títulos, botões, imagens, cards informativos e áreas reservadas para exibição dinâmica dos dados climáticos trazidos pela API.
 
   - O CSS será responsável pela estilização da interface, definindo cores, layout, tipografia e garantindo uma navegação clara, responsiva e agradável para o usuário.
 
