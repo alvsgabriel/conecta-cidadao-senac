@@ -98,5 +98,15 @@ Integrações e Serviços Externos:
  - **OpenWeatherMap API**: Fonte principal de dados para monitoramento climático e geocodificação de endereços.
  - **Firebase Cloud Messaging**: Para envio de notificações push aos usuários.
 
+## Planejamento Técnico da Página 
+
+- O projeto Conecta Cidadão utilizará HTML para estruturar toda a página, organizando as seções como cabeçalho, chamada inicial, área de problema, funcionalidades e demais conteúdos.
+- O CSS será responsável pela estilização da interface, definindo cores, layout, tipografia e garantindo uma navegação clara, responsiva e agradável para o usuário.
+- O JavaScript será utilizado para implementar funcionalidades interativas, como menus dinâmicos, possíveis animações na navegação, além da integração com a API pública, permitindo a exibição de dados atualizados em tempo real para o usuário.
+
+
+
+
+
 Infraestrutura e BackEnd:
  - A ver
