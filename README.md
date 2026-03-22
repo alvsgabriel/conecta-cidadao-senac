@@ -99,8 +99,7 @@ Integrações e Serviços Externos:
  - **Firebase Cloud Messaging**: Para envio de notificações push aos usuários.
 
 ## Planejamento Técnico da Página 
-
-- A landing será desenvolvida como página responsiva, com foco em clareza de informação, apresentação da proposta da solução e captação de interesse de cidadãos e gestores públicos. 
+A landing será desenvolvida como página responsiva, com foco em clareza de informação, apresentação da proposta da solução e captação de interesse de cidadãos e gestores públicos. 
 
 - **Cabeçalho (header):** Apresentará o nome do projeto, menu de navegação e botão de chamada para ação. Essa seção terá como objetivo facilitar o acesso rápido às áreas principais da página.
 
@@ -122,24 +121,24 @@ Integrações e Serviços Externos:
 
 - **Rodapé (Footer):** Conterá informações complementares, nomes da equipe, links institucionais e créditos do projeto.
 
-- **Resumo das linguagens**
-  - O projeto Conecta Cidadão utilizará HTML para estruturar toda a página, organizando as seções como cabeçalho, chamada inicial, área de problema, funcionalidades e demais conteúdos.
-   - `<header>` para o topo da página
-   - `<section>` para dividir os blocos de conteúdo
-   - `<nav>` para o menu de navegação
-   - `<form>` para captação de contatos
-   - `<footer>` para o rodapé
-  - Além disso, o HTML será responsável por organizar textos, títulos, botões, imagens, cards informativos e áreas reservadas para exibição dinâmica dos dados climáticos trazidos pela API.
+**Resumo das linguagens**
+O projeto Conecta Cidadão utilizará HTML para estruturar toda a página, organizando as seções como cabeçalho, chamada inicial, área de problema, funcionalidades e demais conteúdos.
+- `<header>` para o topo da página
+- `<section>` para dividir os blocos de conteúdo
+- `<nav>` para o menu de navegação
+- `<form>` para captação de contatos
+- `<footer>` para o rodapé
+Além disso, o HTML será responsável por organizar textos, títulos, botões, imagens, cards informativos e áreas reservadas para exibição dinâmica dos dados climáticos trazidos pela API.
 
-  - O CSS será responsável pela estilização da interface, definindo cores, layout, tipografia e garantindo uma navegação clara, responsiva e agradável para o usuário.
+O CSS será responsável pela estilização da interface, definindo cores, layout, tipografia e garantindo uma navegação clara, responsiva e agradável para o usuário.
 
-  - O JavaScript será utilizado para implementar a interatividade da página e realizar a integração com a OpenWeatherMap API. Entre suas funções principais estão:
-    - Realizar requisições à API para obter dados climáticos em tempo real
-    - Processar e exibir essas informações dinamicamente na seção de clima
-    - Permitir interações com botões e elementos da página
-    - Validar campos do formulário de contato antes do envio
-    - Atualizar partes do conteúdo sem necessidade de recarregar a página
-    - Dessa forma, o JavaScript será o responsável por conectar a parte visual da landing page com dados externos e comportamentos dinâmicos da interface.
+O JavaScript será utilizado para implementar a interatividade da página e realizar a integração com a OpenWeatherMap API. Entre suas funções principais estão:
+- Realizar requisições à API para obter dados climáticos em tempo real
+- Processar e exibir essas informações dinamicamente na seção de clima
+- Permitir interações com botões e elementos da página
+- Validar campos do formulário de contato antes do envio
+- Atualizar partes do conteúdo sem necessidade de recarregar a página
+- Dessa forma, o JavaScript será o responsável por conectar a parte visual da landing page com dados externos e comportamentos dinâmicos da interface.
 
 ## Infraestrutura e BackEnd:
  - A ver
