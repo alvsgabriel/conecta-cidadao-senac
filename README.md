@@ -52,6 +52,7 @@ A integração de dados climáticos via API é útil para o Conecta Cidadão uma
 ## Planejamento do projeto
 * **Criação e Organização do Github:** Feito por Gabriel Alves dos Santos
 * **Proposta:** Feito por Carlos Gustavo Guerra Carvalho
+* **Estrutura da landing page:** Feito por Josias Eliel Sarquiz
 
 O projeto possui um ciclo total de 12 meses:
 
