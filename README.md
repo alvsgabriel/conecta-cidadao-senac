@@ -140,6 +140,3 @@ O JavaScript será utilizado para implementar a interatividade da página e real
 - Validar campos do formulário de contato antes do envio
 - Atualizar partes do conteúdo sem necessidade de recarregar a página
 - Dessa forma, o JavaScript será o responsável por conectar a parte visual da landing page com dados externos e comportamentos dinâmicos da interface.
-
-## Infraestrutura e BackEnd:
- - A ver
