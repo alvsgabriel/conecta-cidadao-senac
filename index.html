@@ -138,10 +138,23 @@
                     <p>Dados fornecidos pela OpenWeatherMap API para prevenção de riscos.</p>
                 </div>
                 
-                <!-- Card de Exibição da API (Interativo via JS) -->
-                <div id="weather-card" class="weather-card">
-                    <div class="weather-loading">Carregando dados climáticos...</div>
-                    <!-- Conteúdo será injetado pelo JavaScript -->
+                <div class="weather-container">
+                    <!-- Card de Exibição da API (Interativo via JS) -->
+                    <div id="weather-card" class="weather-card">
+                        <div class="weather-loading">Carregando dados climáticos...</div>
+                        <!-- Conteúdo será injetado pelo JavaScript -->
+                    </div>
+
+                    <!-- Formulário de CEP -->
+                    <div class="cep-form-container">
+                        <h3>Não é sua localização?</h3>
+                        <form id="cep-form" class="cep-form">
+                            <input type="text" id="cep-input" placeholder="Digite seu CEP" maxlength="9" required>
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                        </form>
+                        <div id="cep-error" class="cep-error"></div>
+                        <div id="cep-info" class="cep-info"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -167,7 +180,7 @@
                 <p>Projeto Integrador - Senac</p>
             </div>
             <div class="footer-team">
-                <p><strong>Equipe:</strong> [ADICIONE SEU NOME AQUI] Josias Eliel Sarquiz</p>
+                <p><strong>Equipe:</strong> [ADICIONE SEU NOME AQUI] Gabriel Alves, Josias Eliel Sarquiz</p>
             </div>
         </div>
         <div class="footer-bottom text-center">
