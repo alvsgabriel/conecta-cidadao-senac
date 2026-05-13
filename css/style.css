@@ -24,15 +24,15 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--white);
+    font-family: 'Inter', sans-serif; /* Fonte padrão do projeto */
+    font-weight: 400; /* Peso normal, mais legível que o 300 */
+    color: var(--text-color); /* Usa o cinza escuro que você já definiu (#333) */
 }
 
 h1, h2, h3, .logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 
 ul { list-style: none; }
@@ -95,6 +95,11 @@ img { max-width: 100%; display: block; }
     padding: 1rem 0;
 }
 
+.logo img {
+    width: 95%;
+    max-width: 200px;
+}
+
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -104,6 +109,10 @@ img { max-width: 100%; display: block; }
 .logo { font-size: 1.5rem; color: var(--primary-color); }
 .logo span { color: var(--secondary-color); }
 
+section {
+    scroll-margin-top: 80px;
+}
+
 .nav-menu {
     display: flex;
     gap: 2rem;
@@ -112,11 +121,23 @@ img { max-width: 100%; display: block; }
 .nav-menu a {
     font-weight: 600;
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: #004085;  
     transition: var(--transition);
+    padding-bottom: 5px; /* Adicionado para evitar que o layout "pule" quando surgir o border */
+    border-bottom: 2px solid transparent; /* Cria uma borda invisível por padrão */
 }
 
-.nav-menu a:hover { color: var(--primary-color); }
+/* CORREÇÃO DO HOVER: Adicionado o "color:" antes da variável */
+.nav-menu a:hover { 
+    color: var(--secondary-color); 
+    opacity: 0.8; 
+}
+
+.header .nav-bar .nav-menu a.active {
+    color: var(--secondary-color) !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid var(--secondary-color);
+}
 
 /* ==========================================================================
    HERO SECTION
@@ -128,26 +149,38 @@ img { max-width: 100%; display: block; }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.3fr;
     align-items: center;
     gap: 4rem;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    line-height: 1.2;
+    font-size: 4rem;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
 }
 
 .hero-content h1 span { color: var(--secondary-color); }
-.hero-content p { font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-muted); }
+.hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
 
 .hero-btns { display: flex; gap: 1rem; }
+
+.hero-image img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
 /* ==========================================================================
    SEÇÃO PROBLEMA & CARDS
    ========================================================================== */
+#problema h2 {
+    font-size: 2.5rem;
+}
+
 .problem-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -162,11 +195,23 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.problem-card h3 { margin-bottom: 1rem; color: var(--primary-color); }
+.problem-card h3 { 
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+}
 
 /* ==========================================================================
    PROPOSTA
    ========================================================================== */
+
+.proposta-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 4rem;    
+}
 
 .list-title {
     margin-top: 20px;
@@ -176,14 +221,46 @@ img { max-width: 100%; display: block; }
 }
 
 .check-list li {
-    margin-bottom: 12px;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* Criando um checkmark customizado sem precisar de imagem externa */
+.check-list li::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--secondary-color); /* O laranja do seu logo */
+    color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    flex-shrink: 0; /* Impede o ícone de amassar em textos longos */
+}
+
+
+#solucao h2 {
+    font-size: 1.6rem;    
+}
+
+#solucao h3 {
+    font-size: 1.6rem;
 }
 
 /* ==========================================================================
    FUNCIONALIDADES
    ========================================================================== */
+#funcionalidades h2 {
+    font-size: 2.5rem;    
+}
+
 .features-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -197,6 +274,8 @@ img { max-width: 100%; display: block; }
     padding: 0.5rem 1rem;
     margin-bottom: 2rem;
     display: inline-block;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 .feature-item { margin-bottom: 1.5rem; }
@@ -218,12 +297,20 @@ img { max-width: 100%; display: block; }
 /* ==========================================================================
    WEATHER API CARD (INTERATIVO)
    ========================================================================== */
+#clima h2 {
+    font-size: 2.5rem;    
+}
+
 .weather-container {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 2rem;
     margin-top: 2rem;
     align-items: start;
+}
+
+.weather-header {
+    text-align: center;    
 }
 
 @media (max-width: 768px) {
@@ -340,6 +427,12 @@ img { max-width: 100%; display: block; }
 .footer {
     padding: 40px 0 20px;
     border-top: 1px solid #eee;
+    background: #0056b3;
+    color: #fff;
+}
+
+.footer-info h3, .footer-team h3 {
+    font-weight: 300;  
 }
 
 .footer-content {
@@ -351,7 +444,7 @@ img { max-width: 100%; display: block; }
 
 .footer-bottom {
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: #fff;
 }
 
 /* ==========================================================================
@@ -360,7 +453,61 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
     .nav-menu, .nav-cta { display: none; } /* Simplicidade para o MVP */
     
-    .hero-grid, .features-split {
+    @media (max-width: 768px) {
+  /* Esconde o menu normal e prepara ele para o mobile */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 85px;
+        flex-direction: column;
+        background-color: #0056b3;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        gap: 0rem;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid #fff;
+        padding: 1rem 0;        
+    }
+
+    .nav-menu a {
+    color: #fff;
+    }
+
+    .nav-menu a:hover {
+        color: #ff8c00;
+    } 
+
+    .nav-menu a.active {
+        border-bottom: initial !important;
+    }    
+
+    /* Classe que o JavaScript vai ativar para mostrar o menu */
+    .nav-menu.active {
+        left: 0;    
+    }
+
+    /* Estiliza as 3 barrinhas do menu */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--primary-color);
+    }
+
+    .nav-cta { display: none; } /* Mantém o botão de demo escondido no mobile como você já tinha */
+    
+    .hero-grid, .features-split, .proposta-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
