@@ -2,6 +2,9 @@
 // Coloque sua chave entre as aspas (pegue no site openweathermap.org)
 const minhaChave = "105d4c5af66162bca3e200c3a89a40ff"; 
 let cidadeAtual = "Estrela,BR"; // Será atualizado com base no CEP salvo ou padrão
+let mapa; // Variável para o mapa Leaflet
+let marcador; // Variável para o marcador do mapa
+let camadas = {}; // Objeto para armazenar as camadas de clima
 
 // 2. Função para buscar dados do ViaCEP
 function buscarCEP(cep) {
@@ -83,6 +86,8 @@ function mostrarNaTela(dadosClima) {
     const descricao = dadosClima.weather[0].description;
     const umidade = dadosClima.main.humidity;
     const icone = dadosClima.weather[0].icon;
+    const lat = dadosClima.coord.lat;
+    const lon = dadosClima.coord.lon;
 
     // Criamos o HTML que vai aparecer dentro do card
     // Usamos o sinal de crase (`) para conseguir misturar texto com variáveis ${}
@@ -95,16 +100,71 @@ function mostrarNaTela(dadosClima) {
             <p><strong>Local:</strong> ${dadosClima.name}</p>
         </div>
     `;
+
+    // Inicializar ou atualizar o mapa com as coordenadas
+    inicializarMapa(lat, lon);
 }
 
-// 5. Lógica do Formulário de CEP
+// 4.5. Função para inicializar o mapa com camadas de clima
+function inicializarMapa(lat, lon) {
+    // Se o mapa já existe, apenas atualiza a vista e o marcador
+    if (mapa) {
+        mapa.setView([lat, lon], 10);
+        // Remover marcador antigo se existir
+        if (marcador) {
+            mapa.removeLayer(marcador);
+        }
+        // Adicionar novo marcador
+        marcador = L.marker([lat, lon]).addTo(mapa)
+            .bindPopup(`Localização: ${cidadeAtual}`)
+            .openPopup();
+        return;
+    }
+
+    // Inicializar o mapa centrado nas coordenadas
+    mapa = L.map('weather-map').setView([lat, lon], 10);
+
+    // Adicionar camada base (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(mapa);
+
+    // Definir as camadas de clima disponíveis
+    const camadasClima = {
+        "Precipitação": L.tileLayer(`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${minhaChave}`, {
+            attribution: '© OpenWeatherMap'
+        }),
+        "Nuvens": L.tileLayer(`https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=${minhaChave}`, {
+            attribution: '© OpenWeatherMap'
+        }),
+        "Pressão": L.tileLayer(`https://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid=${minhaChave}`, {
+            attribution: '© OpenWeatherMap'
+        }),
+        "Vento": L.tileLayer(`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${minhaChave}`, {
+            attribution: '© OpenWeatherMap'
+        }),
+        "Temperatura": L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${minhaChave}`, {
+            attribution: '© OpenWeatherMap'
+        })
+    };
+
+    // Adicionar controle de camadas
+    L.control.layers(null, camadasClima).addTo(mapa);
+
+    // Adicionar marcador na localização
+    marcador = L.marker([lat, lon]).addTo(mapa)
+        .bindPopup(`Localização: ${cidadeAtual}`)
+        .openPopup();
+}
 const formularioCEP = document.getElementById("cep-form");
 
 formularioCEP.addEventListener("submit", function(evento) {
     evento.preventDefault();
     const cepDigitado = document.getElementById("cep-input").value;
     buscarCEP(cepDigitado);
-    formularioCEP.reset();
+    // formularioCEP.reset(); // Removido para manter o valor do CEP
+    // Scroll automático para a seção clima
+    document.getElementById('clima').scrollIntoView({ behavior: 'smooth' });
 });
 
 // 6. Lógica do Formulário de Contato

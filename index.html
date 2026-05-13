@@ -17,6 +17,7 @@
     <!-- CSS -->
     <!-- CORRIGIR CAMINHO PARA A PASTA DO CSS -->
     <link rel="stylesheet" href="css/style.css">  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />  
 </head>
 <body>
 
@@ -143,22 +144,28 @@
                     <p>Dados fornecidos pela OpenWeatherMap API para prevenção de riscos.</p>
                 </div>
                 
-                <div class="weather-container">
-                    <!-- Card de Exibição da API (Interativo via JS) -->
-                    <div id="weather-card" class="weather-card">
-                        <div class="weather-loading">Carregando dados climáticos...</div>
-                        <!-- Conteúdo será injetado pelo JavaScript -->
-                    </div>
+                <div class="weather-grid">
+                    <!-- Mapa Interativo -->
+                    <div id="weather-map" class="weather-map"></div>
+                    
+                    <!-- Sidebar com Temperatura e Form -->
+                    <div class="weather-sidebar">
+                        <!-- Card de Exibição da API (Interativo via JS) -->
+                        <div id="weather-card" class="weather-card">
+                            <div class="weather-loading">Carregando dados climáticos...</div>
+                            <!-- Conteúdo será injetado pelo JavaScript -->
+                        </div>
 
-                    <!-- Formulário de CEP -->
-                    <div class="cep-form-container">
-                        <h3>Não é sua localização?</h3>
-                        <form id="cep-form" class="cep-form">
-                            <input type="text" id="cep-input" placeholder="Digite seu CEP" maxlength="9" required>
-                            <button type="submit" class="btn btn-primary">Buscar</button>
-                        </form>
-                        <div id="cep-error" class="cep-error"></div>
-                        <div id="cep-info" class="cep-info"></div>
+                        <!-- Formulário de CEP -->
+                        <div class="cep-form-container">
+                            <h3>Não é sua localização?</h3>
+                            <form id="cep-form" class="cep-form">
+                                <input type="text" id="cep-input" placeholder="Digite seu CEP" maxlength="9" required>
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </form>
+                            <div id="cep-error" class="cep-error"></div>
+                            <div id="cep-info" class="cep-info"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,6 +205,7 @@
 
     <!-- Scripts -->
     <!-- CORRIGIR CAMINHO PARA A PASTA DO JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
     <script src="js/menu.js"></script>
 </body>

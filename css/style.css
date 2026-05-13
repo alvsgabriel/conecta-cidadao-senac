@@ -301,7 +301,7 @@ section {
     font-size: 2.5rem;    
 }
 
-.weather-container {
+.weather-grid {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 2rem;
@@ -309,12 +309,25 @@ section {
     align-items: start;
 }
 
+.weather-sidebar {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+}
+
+.weather-map {
+    height: 464px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
 .weather-header {
     text-align: center;    
 }
 
 @media (max-width: 768px) {
-    .weather-container {
+    .weather-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
@@ -324,7 +337,7 @@ section {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 2rem;
+    padding: 0.75rem 2rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     min-height: 200px;
     display: flex;
@@ -350,7 +363,7 @@ section {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 2rem;
+    padding: 0.75rem 2rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -405,6 +418,23 @@ section {
 
 .clima-info img {
     margin: 0 auto;
+}
+
+/* ==========================================================================
+   MAPA INTERATIVO
+   ========================================================================== */
+.weather-map {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.leaflet-top.leaflet-right {
+    z-index: 500 !important;
+}
+
+.leaflet-top.leaflet-left {
+    z-index: 500 !important;
 }
 
 /* ==========================================================================
