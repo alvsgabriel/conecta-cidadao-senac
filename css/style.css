@@ -192,7 +192,7 @@ section {
     padding: 2rem;
     background: var(--white);
     border-bottom: 4px solid var(--secondary-color);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .problem-card h3 { 
@@ -200,6 +200,12 @@ section {
     color: var(--primary-color);
     font-size: 1.5rem;
     line-height: 1.6rem;
+}
+
+.problem-card img {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 10px;    
 }
 
 /* ==========================================================================
@@ -268,18 +274,38 @@ section {
     margin-top: 3rem;
 }
 
+.feature-group {
+    text-align: center;
+}
+
 .feature-group h3 {
     background: var(--primary-color);
     color: var(--white);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     margin-bottom: 2rem;
-    display: inline-block;
+    display: flex;
     font-size: 2rem;
     font-weight: 800;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid rgb(255, 140, 0);
+}
+
+.feature-item h4 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 900; 
+}
+
+.feature-group img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
 }
 
 .feature-item { margin-bottom: 1.5rem; }
-.feature-item h4 { color: var(--primary-color); margin-bottom: 0.5rem; }
 
 .list-title {
     margin-top: 20px;
@@ -481,10 +507,16 @@ section {
    RESPONSIVIDADE (MOBILE)
    ========================================================================== */
 @media (max-width: 768px) {
-    .nav-menu, .nav-cta { display: none; } /* Simplicidade para o MVP */
+    /* Prepara o menu para o mobile */
     
-    @media (max-width: 768px) {
-  /* Esconde o menu normal e prepara ele para o mobile */
+    p, li {
+       font-size: 0.9rem !important;    
+    } 
+
+    .header .nav-bar .nav-menu a.active {
+        border-bottom: initial;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -496,6 +528,11 @@ section {
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         gap: 0rem;
+        display: flex; /* Garante que o menu apareça quando ativo */
+    }
+
+    .nav-menu.active {
+        left: 0;    
     }
 
     .nav-menu li {
@@ -504,23 +541,9 @@ section {
     }
 
     .nav-menu a {
-    color: #fff;
+        color: #fff;
     }
 
-    .nav-menu a:hover {
-        color: #ff8c00;
-    } 
-
-    .nav-menu a.active {
-        border-bottom: initial !important;
-    }    
-
-    /* Classe que o JavaScript vai ativar para mostrar o menu */
-    .nav-menu.active {
-        left: 0;    
-    }
-
-    /* Estiliza as 3 barrinhas do menu */
     .menu-toggle {
         display: block;
         cursor: pointer;
@@ -535,17 +558,79 @@ section {
         background-color: var(--primary-color);
     }
 
-    .nav-cta { display: none; } /* Mantém o botão de demo escondido no mobile como você já tinha */
+    .nav-cta { display: none; } 
+
+    .logo {
+        margin: auto;
+    }    
     
+    .hero {
+        padding: 20px 0;
+    }
+
     .hero-grid, .features-split, .proposta-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 1rem;
     }
     
-    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content h1 { 
+        font-size: 2.6rem; 
+         word-wrap: break-word;
+    }
+
+    .hero-content p {
+        margin-bottom: 1rem;
+    }
+
+    .hero-btns { 
+        justify-content: initial;
+        display: grid; 
+    }
+
+    .section-padding {
+        padding: 30px 0;
+    }
+
+    #problema h2, #funcionalidades h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    #clima h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    #contato h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .features-split {
+        margin-top: 2rem;
+    }
+
+    .feature-group h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 0.8rem;
+    }  
     
-    .hero-btns { justify-content: center; }
+    .feature-item h4 {
+        margin-bottom: 0;
+    }    
     
+    .problem-grid {
+        margin-top: 2rem;
+    }
+    
+    .check-list li {
+        text-align: left;
+    }
+
     .cta-form { flex-direction: column; }
     
     .footer-content {
@@ -553,4 +638,26 @@ section {
         gap: 2rem;
         text-align: center;
     }
+    .weather-grid, .weather-map, .weather-card, .cep-form-container {
+        width: 100% !important;
+        max-width: 100vw;
+        box-sizing: border-box; /* Garante que o padding não aumente a largura */
+    }
+
+    .weather-map {
+        height: 300px; /* Reduz a altura no mobile para não ocupar a tela toda */
+    }
+
+    .weather-card {
+        padding: 1rem; /* Diminui o padding interno */
+    }
+
+    .footer-content {
+        align-items: initial;
+    }
+
+    .footer-bottom p {
+        font-size: 0.7rem !important;
+    }    
+    
 }
