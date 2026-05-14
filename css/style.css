@@ -192,7 +192,7 @@ section {
     padding: 2rem;
     background: var(--white);
     border-bottom: 4px solid var(--secondary-color);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .problem-card h3 { 
@@ -200,6 +200,12 @@ section {
     color: var(--primary-color);
     font-size: 1.5rem;
     line-height: 1.6rem;
+}
+
+.problem-card img {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 10px;    
 }
 
 /* ==========================================================================
@@ -268,18 +274,38 @@ section {
     margin-top: 3rem;
 }
 
+.feature-group {
+    text-align: center;
+}
+
 .feature-group h3 {
     background: var(--primary-color);
     color: var(--white);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     margin-bottom: 2rem;
-    display: inline-block;
+    display: flex;
     font-size: 2rem;
     font-weight: 800;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid rgb(255, 140, 0);
+}
+
+.feature-item h4 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 900; 
+}
+
+.feature-group img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
 }
 
 .feature-item { margin-bottom: 1.5rem; }
-.feature-item h4 { color: var(--primary-color); margin-bottom: 0.5rem; }
 
 .list-title {
     margin-top: 20px;
@@ -552,6 +578,11 @@ section {
         font-size: 2.6rem; 
          word-wrap: break-word;
     }
+
+    .hero-content p {
+        margin-bottom: 1rem;
+    }
+
     .hero-btns { 
         justify-content: initial;
         display: grid; 
@@ -583,8 +614,9 @@ section {
     }
 
     .feature-group h3 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 1rem;
+        padding: 0.5rem 0.8rem;
     }  
     
     .feature-item h4 {
