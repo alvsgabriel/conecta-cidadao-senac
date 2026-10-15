@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crie sua conta no Conecta Cidadão.">
+    <title>Cadastro | Conecta Cidadão</title>
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-page">
+    <main class="auth-main">
+        <section class="auth-card" aria-labelledby="register-title">
+            <a href="/" aria-label="Voltar para a página inicial">
+                <img class="auth-logo" src="/assets/img/logo-conecta-cidadao.jpg" alt="Conecta Cidadão">
+            </a>
+            <h1 id="register-title">Criar cadastro</h1>
+            <p class="auth-description">Preencha seus dados para criar sua conta.</p>
+
+            <form id="register-form" class="auth-form">
+                <label for="full-name">
+                    Nome completo
+                    <input id="full-name" name="full_name" type="text" autocomplete="name" maxlength="100" required>
+                </label>
+                <label for="new-username">
+                    Usuário
+                    <input id="new-username" name="username" type="text" autocomplete="username" minlength="3" maxlength="32" pattern="[A-Za-z0-9_.\-]+" aria-describedby="username-help" required>
+                </label>
+                <small id="username-help" class="auth-help">Use de 3 a 32 letras, números, ponto, hífen ou sublinhado.</small>
+                <label for="new-password">
+                    Senha
+                    <input id="new-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="256" required>
+                </label>
+                <label for="confirm-password">
+                    Confirmar senha
+                    <input id="confirm-password" name="confirm_password" type="password" autocomplete="new-password" minlength="8" maxlength="256" required>
+                </label>
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                <p id="register-message" class="auth-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="auth-register">
+                Já tem uma conta? <a href="/login">Fazer login</a>
+            </p>
+            <a class="auth-home-link auth-home" href="/">Voltar para a página inicial</a>
+        </section>
+    </main>
+    <script src="/js/auth.js" defer></script>
+</body>
+</html>

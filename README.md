@@ -140,3 +140,13 @@ O JavaScript será utilizado para implementar a interatividade da página e real
 - Validar campos do formulário de contato antes do envio
 - Atualizar partes do conteúdo sem necessidade de recarregar a página
 - Dessa forma, o JavaScript será o responsável por conectar a parte visual da landing page com dados externos e comportamentos dinâmicos da interface.
+
+## Executar localmente
+
+O cadastro e o login usam um servidor local em Python e um banco SQLite, ambos sem dependências externas. Com Python 3.10 ou mais recente instalado:
+
+1. Baixe ou clone este repositório.
+2. Na pasta do projeto, execute `python3 server.py` (no Windows, `py server.py`).
+3. Acesse `http://127.0.0.1:8000`.
+
+O banco `data/users.sqlite3` é criado automaticamente na primeira execução e fica apenas na máquina local; ele não deve ser commitado. As senhas são armazenadas como hashes com salt. O GitHub Pages não executa o servidor Python, portanto cadastro e login só funcionam ao rodar o projeto localmente.

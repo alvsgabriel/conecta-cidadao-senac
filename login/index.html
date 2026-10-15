@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesse sua conta no Conecta Cidadão.">
+    <title>Login | Conecta Cidadão</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-page">
+    <main class="auth-main">
+        <section class="auth-card" aria-labelledby="login-title">
+            <a href="/" aria-label="Voltar para a página inicial">
+                <img class="auth-logo" src="/assets/img/logo-conecta-cidadao.jpg" alt="Conecta Cidadão">
+            </a>
+            <div id="login-view">
+                <h1 id="login-title">Entrar</h1>
+                <p class="auth-description">Acesse sua conta do Conecta Cidadão.</p>
+
+                <form id="login-form" class="auth-form">
+                    <label for="username">
+                        Usuário
+                        <input id="username" name="username" type="text" autocomplete="username" required>
+                    </label>
+                    <label for="password">
+                        Senha
+                        <input id="password" name="password" type="password" autocomplete="current-password" required>
+                    </label>
+                    <button class="btn btn-primary" type="submit">Entrar</button>
+                    <p id="login-message" class="auth-message" role="status" aria-live="polite"></p>
+                </form>
+
+                <p class="auth-register">
+                    <a class="btn btn-outline" href="/register">Ainda não tem conta? Clique aqui</a>
+                </p>
+            </div>
+            <div id="logged-in-view" hidden>
+                <h1>Você já está conectado</h1>
+                <p id="logged-in-name" class="auth-description"></p>
+                <button id="logout-button" class="btn btn-outline auth-logout" type="button">Sair</button>
+                <p id="logout-message" class="auth-message" role="status" aria-live="polite"></p>
+            </div>
+            <a class="auth-home-link auth-home" href="/">Voltar para a página inicial</a>
+        </section>
+    </main>
+    <script src="/js/auth.js" defer></script>
+</body>
+</html>
